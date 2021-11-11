@@ -16,7 +16,7 @@ const EditMovieForm = (props) => {
   });
   useEffect(() => {
     axios
-      .get(`http://localhost:3333/api/movies/${id}`)
+      .get(`http://localhost:5000/api/movies/${id}`)
       .then((resp) => {
         props.setMovie(resp.data);
       })
@@ -34,10 +34,10 @@ const EditMovieForm = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:3333/api/movies/${id}`, movie)
+      .put(`http://localhost:5000/api/movies/${id}`, movie)
       .then((resp) => {
         props.setMovies(resp.data);
-        push(`/movies/edit/${id}`);
+        push(`/movies/${id}`);
       })
       .catch((err) => {
         console.log(err);
