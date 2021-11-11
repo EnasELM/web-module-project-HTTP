@@ -26,7 +26,7 @@ const App = (props) => {
       .catch((err) => {
         console.log(err);
       });
-  }, [movies]);
+  }, []);
 
   const deleteMovie = (id) => {
     const filterMovies = movies.filter((item) => Number(id) !== item.id);
