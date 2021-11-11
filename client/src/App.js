@@ -21,11 +21,12 @@ const App = (props) => {
       .get("http://localhost:5000/api/movies")
       .then((res) => {
         setMovies(res.data);
+        console.log(movies);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, [, movies]);
+  }, [movies]);
 
   const deleteMovie = (id) => {
     const filterMovies = movies.filter((item) => id !== item.id);

@@ -62,6 +62,7 @@ const Movie = (props) => {
                         
                         <section>
                             <span className="m-2 btn btn-dark">Favorite</span>
+                            <Link to={`/movies/add/${movie.id}`} className="m-2 btn btn-success">ADD</Link>
                             <Link to={`/movies/edit/${movie.id}`} className="m-2 btn btn-success">Edit</Link>
                             <span className="delete"><input onClick={handelDelete} type="button" className="m-2 btn btn-danger" value="Delete"/></span>
                         </section>
